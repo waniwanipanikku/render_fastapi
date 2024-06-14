@@ -2,15 +2,10 @@ from typing import Optional
 
 from fastapi import FastAPI
 
-<<<<<<< HEAD
 from fastapi.responses import HTMLResponse
 
 import random
 
-=======
-import random
-
->>>>>>> 10834d520b46cbca1a0f43e026b5a0a7d2dfedaa
 app = FastAPI()
 
 
