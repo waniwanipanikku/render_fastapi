@@ -2,8 +2,15 @@ from typing import Optional
 
 from fastapi import FastAPI
 
+<<<<<<< HEAD
+from fastapi.responses import HTMLResponse
+
 import random
 
+=======
+import random
+
+>>>>>>> 10834d520b46cbca1a0f43e026b5a0a7d2dfedaa
 app = FastAPI()
 
 
@@ -31,3 +38,21 @@ def omikuji():
     ]
 
     return omikuji_list[random.randrange(10)]
+
+    @app.get("/index")
+def index():
+    html_content = """
+    <html>
+        <head>
+            <title>Some HTML in here</title>
+        </head>
+        <body>
+            <h1>Look ma! HTML!</h1>
+        </body>
+    </html>
+    """
+    return HTMLResponse(content=html_content, status_code=200)
+
+    @app.post("/present")
+async def new_naming(present):
+    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}
