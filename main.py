@@ -11,7 +11,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "takoyak🐙ika"}
+    return {"message": "takoyak🐙"}
 
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Optional[str] = None):
@@ -34,7 +34,7 @@ def omikuji():
 
     return omikuji_list[random.randrange(10)]
 
-    @app.get("/index")
+@app.get("/index")
 def index():
     html_content = """
     <html>
@@ -48,6 +48,6 @@ def index():
     """
     return HTMLResponse(content=html_content, status_code=200)
 
-#     @app.post("/present")
-# async def new_naming(present):
-#     return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}
+@app.post("/present")
+async def new_naming(present):
+    return {"response": f"サーバです。メリークリスマス！ {present}ありがとう。お返しはキャンディーです。"}
